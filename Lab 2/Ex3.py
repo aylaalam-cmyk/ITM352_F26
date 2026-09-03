@@ -7,4 +7,6 @@ float_value = float(input_value)
 squared_value = float_value ** 2
 
 print("you entered:", float_value)
-print("The square of your number you entered is:", squared_value, "have a great day!")
+print("The square of your number you entered is:", squared_value,)
+
+
