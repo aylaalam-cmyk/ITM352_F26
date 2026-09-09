@@ -4,9 +4,9 @@
 #Date: 9/3/2024
 
 def F_to_C(fahrenheit):
-    celsius_value = (fahrenheit - 32) * 5 / 9
+    celsius = (fahrenheit - 32) * 5 / 9
     rounded_celsius = round(celsius, 2)
-    return round_celsius, 2
+    return rounded_celsius
 
 fahrenhight_input = input("Enter a temperature in Fahrenheit: ")
 fahrenheit_float = float(fahrenhight_input)

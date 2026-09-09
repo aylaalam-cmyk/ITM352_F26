@@ -10,4 +10,5 @@ valueSquared = value_as_integer ** 2
 print("you entered:", value_as_integer)
 print("the square of your number is:", valueSquared)
 
-print(f"you entered: {value_as_integer}, and the square of your number is: {valueSquared}")
+#print(f"you entered: {value_as_integer}, and the square of your number is: {valueSquared}")
+#I'n not sure why its not working with it not #'ed
