@@ -1,5 +1,5 @@
 # try to append a tuple. It wont work.
-#Name: Ayla Alameida
+#Name: Mahealani Alameida
 #Date: 9/16/2026
 
 survey_respondants = (1012, 1035, 1021, 1053)

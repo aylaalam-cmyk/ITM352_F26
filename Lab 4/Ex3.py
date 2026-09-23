@@ -1,5 +1,5 @@
 #Manipulate a list in various tricky ways
-#Name: Ayla Alameida
+#Name: Mahealani Alameida
 #Date: 9/16/2026
 
 response_values = [5, 7, 3, 8]

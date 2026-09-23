@@ -1,5 +1,5 @@
 # properly format an inputted name in title case
-#Name: Ayla Alameida
+#Name: Mahealani Alameida
 #Date: 9/18/2026
 
 raw_name = input("Enter your name: ")

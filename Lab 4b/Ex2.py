@@ -1,5 +1,5 @@
 #get url from the user, clean it, and extract the domain name and TLD (top-level domain)
-#name: Ayla Alameida
+#name: Mahealani Alameida
 #date: 9/18/2026
 
 url = input("Enter a URL: ")

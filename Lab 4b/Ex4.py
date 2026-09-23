@@ -1,5 +1,5 @@
 #parse through the portions of an email adddress and print out the username and domain name
-#Name: Ayla Alameida
+#Name: Mahealani Alameida
 #Date: 9/18/2026
 
 email_address = input("Enter an email address: ")
