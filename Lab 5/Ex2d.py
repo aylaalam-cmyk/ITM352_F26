@@ -12,4 +12,4 @@ trips = [
 
 print(trips)
 print("The duration of the 3rd trip is:", trips[2]["duration"], "miles")
-print(f"The fare of the 3rd trip is: $(trips[2]["fares"]:.2f")
+print(f"The fare of the 3rd trip is: ${float(trips[2]["fare"]):.2f}")
