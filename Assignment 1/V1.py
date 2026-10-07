@@ -14,4 +14,6 @@ if answer == "Sacramento":
     print("Correct!")
 else:
     print(f"The answer is 'Sacramento', not {answer!r}.")
-    
+
+#the response can be right but to capitalzed and could return as awrong answer
+#dont put data in code

@@ -8,4 +8,4 @@ for person in celeb:
 age_list = [age for age in ages]
 
 celeb_dictionary = {"celebs": celeb_list, "ages": age_list}
-    print(celeb_dictionary)
+print(celeb_dictionary)
