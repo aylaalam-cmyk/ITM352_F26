@@ -33,7 +33,7 @@ for num, (question, *answers) in enumerate(selected_questions, start=1):
         print(f"{label}. {answer}")
 
     while (answer_label:= input("Choice? ").lower()) not in label_answers:
-        print("Invalid choice. Please select one of (", ".join(label_answers.keys()), ").")
+        print(f"Invalid choice. Please select one of {', '.join(label_answers.keys())}.")
     
     answer = label_answers.get(answer_label)
 

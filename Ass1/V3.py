@@ -8,12 +8,11 @@ questions = [
     ("The last supper was painted by which artist? ", "Leonardo da Vinci", "Michelangelo", "Raphael", "Donatello"),
 ]
 
-for question, in questions.items():
-    correct_answer = question[0]
-    answer = input(f"{question}")
-    for answer in answers:
-        print(f"-{answer}")
-    
+for question, correct_answer, *answers in questions:
+    print(question)
+    for option in (correct_answer, *answers):
+        print(f"- {option}")
+
     answer = input("Your answer: ")
     if answer == correct_answer:
         print("Correct!")

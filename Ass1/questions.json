@@ -1,0 +1,28 @@
+{
+    "Which plants were traditionally used to produce natural dyes for kapa cloth? ": {
+        "answers": ["ʻAʻaliʻi", "Maʻo Hau Hele", "Silversword", "ʻIliahi"],
+        "correct_response": "ʻAʻaliʻi produces red/yellow dyes; Maʻo Hau Hele produces yellow dye"
+    },
+    "Which plants were important in traditional Hawaiian canoe culture (building, repairing, or sailing)? ": {
+        "answers": ["Koa", "Hala", "ʻIlima", "Pōpolo"],
+        "correct_response": "Koa for canoe hulls; Hala leaves for woven sails"
+    },
+    "Which plants have well known Hawaiian legends or spiritual symbolism? ": {
+        "answers": ["Naupaka", "ʻŌhiʻa Lehua", "ʻAʻaliʻi", "ʻIliahi"],
+        "correct_response": "Naupaka’s half‑flower legend; ʻŌhiʻa Lehua’s Pele & ʻŌhiʻa story"
+    },
+    "Which plants were used medicinally in traditional Hawaiian healing practices? ": {
+        "answers": ["Pōpolo", "ʻIlima", "Silversword", "ʻUlu"],
+        "correct_response": "Pōpolo and ʻIlima were both used in traditional Hawaiian healing. Pōpolo helped soothe the throat and reduce inflammation, while ʻIlima was a gentle medicine often used for infants."
+    },
+    "Which plants became endangered or were historically overharvested? ": {
+        "answers": ["ʻIliahi (Sandalwood)", "Maʻo Hau Hele", "Kalo", "Hala"],
+        "correct_response": "ʻSandalwood overharvested in 1800s; Maʻo Hau Hele is endangered"
+    },
+    "Which plants have adaptations to harsh or extreme environments? ": {
+        "answers": ["Silversword", "Naupaka", "ʻIlima", "ʻAʻaliʻi"],
+        "correct_response": "Silversword adapted to high‑altitude UV; Naupaka adapted to salt/wind"
+    }
+}
+
+
