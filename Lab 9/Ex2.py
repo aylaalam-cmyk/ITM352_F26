@@ -1,13 +1,8 @@
-#
-
-
-
+#Read a csv file and compute the average, minimum, and maximum salary of the employees
 
 
 import csv
-from pathlib import Path
-
-csv_filename = Path(__file__).resolve().parent.parent / "cleaning_company_employees.csv"
+csv_filename = "cleaning_company_employees.csv"
 salaries = []
 
 #read the csv file and store the salaries in a list
