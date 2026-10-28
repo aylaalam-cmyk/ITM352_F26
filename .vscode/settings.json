@@ -3,5 +3,6 @@
     "github.copilot.enable": {
         "*": true,
         "python": true
-    }
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }

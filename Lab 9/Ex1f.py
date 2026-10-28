@@ -4,5 +4,5 @@
 with open("names.txt", "r") as file_object:
     content_list = file_object.readlines()
     print(content_list)
-    file_object.write("doe, john\n")
+    file_object.write("Alameida, Mahea\n")
     
