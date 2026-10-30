@@ -1,5 +1,6 @@
 {
     "editor.inlineSuggest.enabled": true,
+    "editor.suggest.preview": true,
     "github.copilot.enable": {
         "*": true,
         "python": true
