@@ -20,7 +20,7 @@ pivot_table = pd.pivot_table(
     index="customer_state",
     columns=["customer_type", "order_type"]
     aggfunc="sumeanm",# Create a DataFrame from a CSV file and aggregate sales by region and order type.
-#
+)
 
 
 import pandas as pd
@@ -58,10 +58,6 @@ try:
 
 except Exception as e:
     print(f"Error occurred while reading the CSV file: {e}")
-
-
-    
     margins=True,
     margins_name="Total Sales",
-)
 print(pivot_table)
