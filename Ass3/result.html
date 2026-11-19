@@ -7,7 +7,22 @@
 </head>
 <body>
     <h1>Quiz Result</h1>
-    <p>You scored {{score}} out of {{total_questions}}.</p>
+    <p>You scored {{ score }} out of {{ total_questions }}.</p>
+    {% if quiz_timed_out %}
+        <p>The quiz ended because time ran out.</p>
+    {% endif %}
+    {% for result in quiz_results %}
+        <section>
+            <h2>{{ result.question }}</h2>
+            {% if result.is_correct %}
+                <p>Correct!</p>
+            {% else %}
+                <p>Your answer: {{ result.selected_answers | join(", ") or "No answer" }}</p>
+                <p>Correct answers: {{ result.correct_answers | join(", ") }}</p>
+            {% endif %}
+            <p>{{ result.explanation }}</p>
+        </section>
+    {% endfor %}
     <a href="{{ url_for('index') }}">Take Quiz Again</a>
 </body>
 </html>

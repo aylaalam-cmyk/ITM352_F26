@@ -3,19 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to the Quiz</title>
+    <title>Quiz</title>
 </head>
 <body>
-    <title>Quiz</title>
-    <h1>question 1</h1>
-    <form method ="POST">
+    <h1>Question {{ question_number }}</h1>
+    <p>Score: {{ score }} / {{ questions_answered }}</p>
+    <p>{{ question }}</p>
+    {% if feedback %}
+        {% if feedback.timed_out %}
+            <p>Time is up!</p>
+        {% elif feedback.is_correct %}
+            <p>Correct!</p>
+        {% else %}
+            <p>Not quite.</p>
+            <p>Your answer: {{ feedback.selected_answers | join(", ") or "No answer" }}</p>
+            <p>Correct answers: {{ feedback.correct_answers | join(", ") }}</p>
+        {% endif %}
+        <p>{{ feedback.explanation }}</p>
+        <form method="POST">
+            <button type="submit" name="action" value="next">Next</button>
+        </form>
+    {% else %}
+        <p>Select one answer.</p>
+        {% if hint %}
+            <p>Hint: {{ hint }}</p>
+        {% endif %}
+        {% if hint_available %}
+            <form method="POST">
+                <button type="submit" name="action" value="hint">Use your one hint</button>
+            </form>
+        {% else %}
+            <p>Your hint for this quiz has been used.</p>
+        {% endif %}
+        <!-- Show a live countdown while this question is active. -->
+        <p>Time remaining: <span id="countdown">{{ seconds_remaining }}</span> seconds</p>
+        <form id="answer-form" method="POST">
+            {% for option in options %}
+                <label>
+                    <input type="radio" name="answer" value="{{ option }}" required>
+                    {{ option }}
+                </label><br>
+            {% endfor %}
+            <button type="submit">Submit Answer</button>
+        </form>
+        <!-- Submit a timeout answer automatically when the countdown ends. -->
+        <form id="timeout-form" method="POST" hidden>
+            <input type="hidden" name="action" value="timeout">
+        </form>
+        <script>
+            // Count down in the browser and submit when the 30-second limit ends.
+            const countdown = document.getElementById("countdown");
+            let secondsRemaining = Number(countdown.textContent);
+            let submissionStarted = false;
+            const answerForm = document.getElementById("answer-form");
+            const timeoutForm = document.getElementById("timeout-form");
+            const countdownInterval = setInterval(() => {
+                secondsRemaining -= 1;
+                countdown.textContent = Math.max(secondsRemaining, 0);
+                if (secondsRemaining <= 0 && !submissionStarted) {
+                    submissionStarted = true;
+                    clearInterval(countdownInterval);
+                    timeoutForm.submit();
+                }
+            }, 1000);
 
-        <h1>Question {{question_number}}</h1>
-        {% if question_number == 1 %}
-            <input type="radio" name="answer" value="{{option}}"> {{options}}<br>
-        {% endfor %}
-        <button type="submit">Submit Answer</button>
-    </form>
-
+            // Stop the timer as soon as the user submits an answer.
+            answerForm.addEventListener("submit", () => {
+                submissionStarted = true;
+                clearInterval(countdownInterval);
+            });
+        </script>
+    {% endif %}
 </body>
 </html>
