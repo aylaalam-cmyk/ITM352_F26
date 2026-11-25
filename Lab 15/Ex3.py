@@ -33,3 +33,7 @@ response = client.chat.completions.create(
 )
 print("Second response:")
 print(response.choices[0].message.content)
+
+response = client.chat.completions.create(
+    model=MODEL,
+    messages=[{"role": "user", "content": "Nice to meet you, Mahea. What is your favorite color?"}]
