@@ -1,17 +1,21 @@
-#Get a Jsn file from CUty of Chicago's data portal and analyze driver types
+# Retrieve and print the latest mortgage rates from the Hawaii Board of REALTORS.
+from io import StringIO
+
 import pandas as pd
 import requests
 
-url = "https://data.cityofchicago.org/resource/97wa-y6ff.json?$select=driver_type,count(license)&$group=driver_type"
-response = requests.get(url)
+url = "https://www.hicentral.com/hawaii-mortgage-rates.php"
+response = requests.get(url, timeout=30)
+response.raise_for_status()
 
-response_json = response.json()
+# Extract the mortgage rate table from the downloaded HTML.
+tables = pd.read_html(StringIO(response.text))
+rate_table = tables[0]
 
-print("Driver types and license counts:")
-print(response_json)
-
-response_df = pd.DataFrame.from_records(response_json)
-response_df.columns = ["Driver Type", "Count"]
-response_df = response_df.set_index("Driver Type")
-
-print(response_df)
+# Print each lender's mortgage term and rates.
+for _, row in rate_table.iterrows():
+    print(
+        f"{row['Lender']} | {row['Term/Type']} | "
+        f"Rate: {row['Interest Rate']}% | "
+        f"Points: {row['% Points']}% | APR: {row['% *APR']}%"
+    )

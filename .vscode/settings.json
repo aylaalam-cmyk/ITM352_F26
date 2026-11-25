@@ -2,11 +2,11 @@
     "editor.inlineSuggest.enabled": true,
     "editor.suggest.preview": true,
     "github.copilot.enable": {
-        "*": false,
+        "*": true,
         "plaintext": false,
         "markdown": false,
         "scminput": false,
-        "python": false
+        "python": true
     },
     "python-envs.defaultEnvManager": "ms-python.python:system"
 }
